@@ -1,8 +1,8 @@
 #!/bin/bash
 
-
 function findNames {
-
+	cat $1
+	echo "=========================================================="
 	REGEX="^[A-Z][a-z]+$"
 
 	for PALABRA in $(cat $1 | tr -d [:punct:] | tr -d [:digit:])
@@ -13,7 +13,7 @@ function findNames {
 	done
 }
 
-findNames textotp.txt
+findNames $1
 
 exit 0
 
