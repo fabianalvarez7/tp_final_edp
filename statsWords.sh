@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 function palabraMasCorta {
 	LONG_MAS_CORTA=100
 	PALABRA_MAS_CORTA=""
@@ -14,11 +13,8 @@ function palabraMasCorta {
 	done
 	
 	echo "====================================================================="
-	echo "La palabra más corta del texto es: '$PALABRA_MAS_CORTA' y tiene $LONG_MAS_CORTA letra/s"
-        echo "====================================================================="	
+	echo "La palabra más corta del texto es: '$PALABRA_MAS_CORTA' y tiene $LONG_MAS_CORTA letra/s"	
 }
-
-
 
 
 function palabraMasLarga {
@@ -35,10 +31,7 @@ function palabraMasLarga {
 
         echo "====================================================================="
         echo "La palabra más larga del texto es: '$PALABRA_MAS_LARGA' y tiene $LONG_MAS_LARGA letras"
-        echo "====================================================================="    
 }
-
-
 
 
 function promLongPalabras {
@@ -50,16 +43,15 @@ function promLongPalabras {
 	echo "====================================================================="
 	echo "Cantidad de letras:" $CANT_LETRAS
 
-	PROM_PALABRAS=$(echo "scale=1; ($CANT_LETRAS / $CANT_PALABRAS)" |bc)
+	PROM_PALABRAS=$(($CANT_LETRAS / $CANT_PALABRAS))
 	echo "====================================================================="
 	echo "El promedio de longitud de las palabras es de $PROM_PALABRAS letras"
 	echo "====================================================================="
 }
 
-cat textotp.txt
-palabraMasCorta textotp.txt
-palabraMasLarga textotp.txt
-promLongPalabras textotp.txt
-
+cat $1
+palabraMasCorta $1
+palabraMasLarga $1
+promLongPalabras $1
 
 exit 0
