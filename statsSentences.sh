@@ -1,23 +1,15 @@
 #!/bin/bash
-
-
+#tr -d '[:punct:]' | tr -d '¿' | tr -d '¡' | tr -d '[:blank:]' |
 function statsSentences {
-	# Verificamos que el archivo fue pasado como argumento
-	if [ $# -ne 1 ]; then
-    		echo "Debe ingresar un archivo de texto como argumento"
-    		exit 1
-	fi
-
-	cat $1
 	echo "========================================================="
-	cat $1 | tr '.' '\n' | tr '?' '\n' | tr '!' '\n' | tr -d '[:punct:]' | tr -d '[:blank:]' | awk 'NF' > resultado.txt
-	cat resultado.txt
-	echo "========================================================="
-      		
-	MIN=10000
-	MAX=0
-	TOTAL=0
-	CONTADOR=0
+	cat $1 | tr '.' '\n' | tr '?' '\n' | tr '!' '\n' | awk 'NF' > temporal.txt
+      	
+	LONG_MIN=10000
+	LONG_MAX=0
+	CONT_CARACTERES=0
+	CONT_ORACIONES=0
+	ORACION_MIN=""
+	ORACION_MAX=""
 
 	# Recorremos el archivo línea por línea
 	while read LINEA; do
@@ -26,29 +18,34 @@ function statsSentences {
     		LONG=${#LINEA}
     	
 		# Actualizamos las variables
-   		if [ $LONG -lt $MIN ]; then
-        		MIN=$LONG
+   		if [ $LONG -lt $LONG_MIN ]; then
+        		LONG_MIN=$LONG
+			ORACION_MIN=$LINEA
     		fi
 
-    		if [ $LONG -gt $MAX ]; then
-			MAX=$LONG
+    		if [ $LONG -gt $LONG_MAX ]; then
+			LONG_MAX=$LONG
+			ORACION_MAX=$LINEA
     		fi
 
-    		TOTAL=$((TOTAL + LONG))
-    		CONTADOR=$((CONTADOR + 1))
-	done < resultado.txt
+    		CONT_CARACTERES=$((CONT_CARACTERES + LONG))
+    		CONT_ORACIONES=$((CONT_ORACIONES + 1))
+	done < temporal.txt
 
-	PROMEDIO=$(($TOTAL/$CONTADOR))
+	PROMEDIO=$(($CONT_CARACTERES / $CONT_ORACIONES))
 
 	# Mostramos los resultados
-	echo "La oración más corta tiene $MIN caracter/es"
-	echo "La oración más larga tiene $MAX caracteres"
+	echo "La oración más corta es: '$ORACION_MIN' y tiene $LONG_MIN caracter/es"
+	echo "La oración más larga es: '$ORACION_MAX' y tiene $LONG_MAX caracteres"
+	echo "La cantidad total de oraciones es:" $CONT_ORACIONES
+	echo "La cantidad total de caracteres es:" $CONT_CARACTERES
 	echo "El promedio de longitud de todas las oraciones es de $PROMEDIO caracteres"
 	echo "========================================================="
 }
 
+cat $1
 statsSentences $1
 
-rm -f resultado.txt
+rm -f temporal.txt
 
 exit 0
