@@ -1,5 +1,7 @@
-#!/bin/bash
-#tr -d '[:punct:]' | tr -d '¿' | tr -d '¡' | tr -d '[:blank:]' |
+#!/usr/bin/env bash
+
+#REGEX=[]$
+
 function statsSentences {
 	echo "========================================================="
 	cat $1 | tr '.' '\n' | tr '?' '\n' | tr '!' '\n' | awk 'NF' > temporal.txt
@@ -37,13 +39,10 @@ function statsSentences {
 	# Mostramos los resultados
 	echo "La oración más corta es: '$ORACION_MIN' y tiene $LONG_MIN caracter/es"
 	echo "La oración más larga es: '$ORACION_MAX' y tiene $LONG_MAX caracteres"
-	echo "La cantidad total de oraciones es:" $CONT_ORACIONES
-	echo "La cantidad total de caracteres es:" $CONT_CARACTERES
 	echo "El promedio de longitud de todas las oraciones es de $PROMEDIO caracteres"
 	echo "========================================================="
 }
 
-cat $1
 statsSentences $1
 
 rm -f temporal.txt
