@@ -8,7 +8,7 @@ function findNames {
 	echo "=========================================================="
 	echo "Nombres propios encontrados:"
 
-	for PALABRA in $(cat $1 | tr -d [:punct:] | tr -d [:digit:])
+	for PALABRA in $(cat $1 | tr -d [:punct:] | tr -d '¡' | tr -d '¿' | tr -d [:digit:])
 	do
 		if [[ $PALABRA =~ $REGEX ]]; then
 			echo $PALABRA
