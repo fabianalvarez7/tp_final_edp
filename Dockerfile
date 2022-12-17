@@ -12,5 +12,7 @@ COPY ./textotp.txt /app
 
 RUN chmod +x /app/menu.sh blankLinesCounter.sh findNames.sh statsSentences.sh statsUsageWords.sh statsWords.sh 
 
-ENTRYPOINT ["bash", "/app/menu.sh"]
+ENTRYPOINT ["/app/.menu.sh"]
+
+CMD ["/app/.menu.sh"]
 
