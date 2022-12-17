@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 
 function blankLinesCounter {	
-	cat $1
 	echo "======================================================================"
 	awk 'BEGIN { x=0 } /^$/ { x=x+1 } END { print "La cantidad de líneas en blanco es:", x }' $1
 	echo "======================================================================"	
