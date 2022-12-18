@@ -20,7 +20,7 @@ function palabraMasCorta {
 function palabraMasLarga {
         LONG_MAS_LARGA=0
         PALABRA_MAS_LARGA=""
-        for PALABRA in $(cat $1 | tr -d [:punct:] | tr -d '¿' | tr -d '¡' tr -d [:digit:])
+        for PALABRA in $(cat $1 | tr -d [:punct:] | tr -d '¿' | tr -d '¡' | tr -d [:digit:])
         do
                 LONG_PALABRA=${#PALABRA}
                 if [ $LONG_PALABRA -gt $LONG_MAS_LARGA ]; then
@@ -34,8 +34,8 @@ function palabraMasLarga {
 
 
 function promLongPalabras {
-	CANT_PALABRAS=$(cat $1 | tr -d [:punct:] | tr -d '¿' | tr -d '¡' tr -d [:digit:] | wc -w)
-	CANT_LETRAS=$(cat $1 | tr -d [:space:] | tr -d [:punct:] | tr -d '¿' | tr -d '¡' tr -d [:digit:] | wc -m)
+	CANT_PALABRAS=$(cat $1 | tr -d [:punct:] | tr -d '¿' | tr -d '¡' | tr -d [:digit:] | wc -w)
+	CANT_LETRAS=$(cat $1 | tr -d [:space:] | tr -d [:punct:] | tr -d '¿' | tr -d '¡' | tr -d [:digit:] | wc -m)
 	PROM_PALABRAS=$(($CANT_LETRAS / $CANT_PALABRAS))
 	echo "El promedio de longitud de las palabras es de $PROM_PALABRAS letras"
 	echo "====================================================================="
