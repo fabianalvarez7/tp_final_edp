@@ -12,7 +12,11 @@ COPY ./textotp.txt /app
 
 RUN chmod +x /app/menu.sh blankLinesCounter.sh findNames.sh statsSentences.sh statsUsageWords.sh statsWords.sh 
 
-ENTRYPOINT ["/app/.menu.sh"]
+#RUN mkdir /volumenapp
 
-CMD ["/app/.menu.sh"]
+ENTRYPOINT ["bash", "./menu.sh"]
+
+CMD ["./menu"]
+
+#VOLUME /volumenapp
 
