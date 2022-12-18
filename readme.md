@@ -1,5 +1,5 @@
 ## Bienvenido al repositorio de Fabián Alvarez
-###Introducción
+### Introducción
 Este proyecto forma parte del trabajo práctico final de la materia "Entorno de programación" de la Tecnicatura Universitaria en Inteligencia Artificial de la facultad de Ciencias Exactas, Ingeniería y Agrimensura de la Universidad Nacional de Rosario, Argentina.
 Consiste en una aplicación que permite filtrar un texto para encontrar:
 1. La palabra más corta, la más larga y el promedio de longitud de todas las palabras del texto.
