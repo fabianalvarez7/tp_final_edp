@@ -33,6 +33,7 @@ while [ $opcion -ne 6 ]; do
 	read -p "SELECCIONE UNA OPCIÓN: " opcion
 	echo
 	clear
+	echo "=========================================================="
         echo "OPCIÓN ELEGIDA:" $opcion
 
 	case $opcion in
