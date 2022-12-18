@@ -14,6 +14,8 @@ function findNames {
 			echo $PALABRA
 		fi
 	done
+	echo "=========================================================="
+
 }
 
 findNames $1
