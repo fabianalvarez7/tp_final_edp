@@ -75,5 +75,5 @@ Y se puede volver a empezar el procedimiento
 ### Bibliografía
 Libro Entorno de programación año 2022 elaborado por la cátedra
 
-###Contacto
+### Contacto
 Para consultas: fabianalvarez212@gmail.com
