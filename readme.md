@@ -17,6 +17,17 @@ Primero se debe descargar el repositorio, para eso desde se debe copiar el link 
 git clone https://github.com/fabianalvarez7/tp_final_edp.git 
 ```
 Todos los archivos de la app se descargan en el directorio "tp_final_edp"
+Deben encontrarse los siguientes archivos:
+1. Dockerfile
+2. blankLinesCounter.sh
+3. findNames.sh
+4. menu.sh
+5. readme.md
+6. statsSentences.sh
+7. statsUsageWords
+8. statsWords.sh
+9. textotp.txt
+
 Para entrar al directorio clonado:
 ```bash
 cd tp_final_edp
@@ -75,5 +86,5 @@ Y se puede volver a empezar el procedimiento
 ### Bibliografía
 Libro Entorno de programación año 2022 elaborado por la cátedra
 
-### Contacto
+###Contacto
 Para consultas: fabianalvarez212@gmail.com
