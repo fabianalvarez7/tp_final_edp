@@ -9,7 +9,7 @@ Consiste en una aplicación que permite filtrar un texto para encontrar:
 5. La cantidad de líneas en blanco que tiene el texto.
 
 ### Recursos
-La app se programó en Bash usando la terminal de comandos de Linux (Ubuntu 22.04). Con el complemento de herramientas como tr o awk para el filtrado de texto. Además, la aplicación se ejecuta a través de un contenedor de Docker y se usó Git para gestionar el control de versiones y posterior publicaión en el repositorio de GitHub.
+La app se programó en Bash usando la terminal de comandos de Linux (Ubuntu 22.04). Con el complemento de herramientas como tr o awk para el filtrado de texto. Además, la aplicación se ejecuta a través de un contenedor de Docker y se usó Git para gestionar el control de versiones y posterior publicaión en el repositorio de GitHub. Por último, el readme.md fue editado con https://pandao.github.io/editor.md/en.html
 
 ### Instalación y ejecución
 Primero se debe descargar el repositorio, para eso desde se debe copiar el link del repositorio https://github.com/fabianalvarez7/tp_final_edp.git y pegar en la terminal de Linux, luego del comando: git clone
