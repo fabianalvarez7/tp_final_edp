@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#REGEX=[]$
+#REGEX=[0-9]+\.[0-9]+$
 
 function statsSentences {
 	echo "========================================================="
@@ -37,7 +37,7 @@ function statsSentences {
 	PROMEDIO=$(($CONT_CARACTERES / $CONT_ORACIONES))
 
 	# Mostramos los resultados
-	echo "La oración más corta es: '$ORACION_MIN' y tiene $LONG_MIN caracter/es"
+	echo "La oración más corta es: '$ORACION_MIN' y tiene $LONG_MIN caracteres"
 	echo "La oración más larga es: '$ORACION_MAX' y tiene $LONG_MAX caracteres"
 	echo "El promedio de longitud de todas las oraciones es de $PROMEDIO caracteres"
 	echo "========================================================="
